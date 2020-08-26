@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import { baseUrl } from './config';
-
 class PokemonForm extends Component {
   constructor(props) {
     super(props);
@@ -26,13 +24,12 @@ class PokemonForm extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(`${baseUrl}/pokemon/types`, {
-      headers: { Authorization: `Bearer ${this.props.token}`},
-    });
+    const response = await fetch(`/api/pokemon/types`);
     if (response.ok) {
       const types = await response.json();
       this.setState({
         types,
+        type: types[0]
       });
     }
   }
@@ -43,10 +40,9 @@ class PokemonForm extends Component {
     const payload = this.state;
     payload.moves = [payload.move1, payload.move2];
 
-    const response = await fetch(`${baseUrl}/pokemon`, {
+    const response = await fetch(`/api/pokemon`, {
       method: 'post',
       headers: {
-        Authorization: `Bearer ${this.props.token}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(payload),
