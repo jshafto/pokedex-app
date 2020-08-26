@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { imageUrl, baseUrl } from './config';
 
 class PokemonDetail extends Component {
   constructor(props) {
@@ -22,9 +21,7 @@ class PokemonDetail extends Component {
 
   async loadPokemon() {
     const id = this.props.match.params.id;
-    const response = await fetch(`${baseUrl}/pokemon/${id}`, {
-      headers: { Authorization: `Bearer ${this.props.token}`}
-    });
+    const response = await fetch(`/api/pokemon/${id}`);
     if (response.ok) {
       this.setState({
         pokemon: await response.json(),
@@ -40,9 +37,9 @@ class PokemonDetail extends Component {
     return (
       <div className="pokemon-detail">
         <div className={`pokemon-detail-image-background`}
-             style={{backgroundImage: `url('${imageUrl}/images/${pokemon.type}.jpg')`}}>
+             style={{backgroundImage: `url('/images/${pokemon.type}.jpg')`}}>
           <div className="pokemon-detail-image"
-               style={{backgroundImage: `url('${imageUrl}${pokemon.imageUrl}')`}}>
+               style={{backgroundImage: `url('${pokemon.imageUrl}')`}}>
           </div>
           <h1 className="bigger">{pokemon.name}</h1>
         </div>
@@ -78,7 +75,7 @@ class PokemonDetail extends Component {
                 {pokemon.items.map(item =>
                   <tr key={item.price * item.happiness}>
                     <td>
-                      <img className="item-image" alt={item.imageUrl} src={`${imageUrl}${item.imageUrl}`} />
+                      <img className="item-image" alt={item.imageUrl} src={item.imageUrl} />
                     </td>
                     <td>{item.name}</td>
                     <td className="centered">{item.happiness}</td>
