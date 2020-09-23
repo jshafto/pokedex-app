@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-import LoginPanel from './LoginPanel';
+import LoginPanel from './LoginPanelRedux';
 import PokemonBrowser from './PokemonBrowser';
 
 const PrivateRoute = ({ component: Component, cProps, ...rest }) => (
