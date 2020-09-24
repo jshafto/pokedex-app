@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getPokemon } from './store/pokemon';
-import LogoutButton from './LogoutButton';
+import LogoutButton from './LogoutButtonRedux';
 import PokemonDetail from './PokemonDetail';
 import PokemonForm from './PokemonForm';
 import Fab from './Fab';
@@ -37,7 +37,6 @@ class PokemonBrowserRedux extends Component {
     if (!this.props.pokemon) {
       return null;
     }
-    console.log(this.props)
     return (
       <main>
         <LogoutButton />

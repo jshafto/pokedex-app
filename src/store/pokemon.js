@@ -9,7 +9,6 @@ export const load = (pokemon) => ({
 export default function reducer (state = [], action) {
   switch (action.type) {
     case LOAD: {
-      console.log(action.pokemon)
       return action.pokemon;
     }
     default: {
@@ -24,7 +23,6 @@ export default function reducer (state = [], action) {
 export const getPokemon = () => async dispatch => {
   const res = await fetch('/api/pokemon');
   const data = await res.json();
-  console.log(data)
   dispatch(load(data));
   return data;
 
