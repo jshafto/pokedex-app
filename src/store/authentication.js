@@ -55,7 +55,6 @@ export const logout = (email, password) => {
       });
 
       if(response.ok){
-        const data = await response.json()
         dispatch(removeUser());
       }
 

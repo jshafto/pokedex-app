@@ -3,7 +3,7 @@ import { NavLink, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getPokemon } from './store/pokemon';
 import LogoutButton from './LogoutButtonRedux';
-import PokemonDetail from './PokemonDetail';
+import PokemonDetail from './PokemonDetailRedux';
 import PokemonForm from './PokemonForm';
 import Fab from './Fab';
 
@@ -70,7 +70,7 @@ class PokemonBrowserRedux extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    pokemon: state.pokemon,
+    pokemon: state.pokemon.pokemon,
 })
 
 const mapDispatchToProps = (dispatch) => ({
