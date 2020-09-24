@@ -7,7 +7,7 @@ Any trainer's best friend! This Pokedex app will allow registered users to brows
 
 ## Project Status
 - [x] Implement authentication with Redux
-- [ ] Load list of Pokemon
+- [x] Load list of Pokemon
 - [ ] Implement logout button
 - [ ] Select current pokemon
 - [ ] Create new Pokemon
