@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
 import LogoutButton from './LogoutButton';
-import PokemonDetail from './PokemonDetail';
+import PokemonDetail from './PokemonDetailRed';
 import PokemonForm from './PokemonForm';
 import Fab from './Fab';
 

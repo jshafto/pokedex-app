@@ -10,7 +10,7 @@ Any trainer's best friend! This Pokedex app will allow registered users to brows
 - [x] Load list of Pokemon
 - [x] Implement logout button
 - [x] Select current pokemon
-- [ ] Create new Pokemon
+- [x] Create new Pokemon
 - Bonus
   - [ ] Implement `cancel` button for the form
   - [ ] Error messages for the form

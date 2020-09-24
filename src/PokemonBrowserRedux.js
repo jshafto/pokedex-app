@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getPokemon } from './store/pokemon';
 import LogoutButton from './LogoutButtonRedux';
 import PokemonDetail from './PokemonDetailRedux';
-import PokemonForm from './PokemonForm';
+import PokemonForm from './PokemonFormRedux';
 import Fab from './Fab';
 
 class PokemonBrowserRedux extends Component {
